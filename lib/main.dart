@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:projekt_1_ekrany_logowania/views/home/home_view.dart';
+import 'package:projekt_1_ekrany_logowania/views/login/login_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  final isLoggedIn = await checkLoginStatus();
+
+  runApp(MainApp(isLoggedIn: isLoggedIn));
+}
+
+class MainApp extends StatelessWidget {
+  static String title = 'Notes SQLite';
+  final bool isLoggedIn;
+
+  const MainApp({required this.isLoggedIn, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: title,
+      themeMode: ThemeMode.dark,
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        )
+      ),
+      home: isLoggedIn ? const HomeView() : const LoginView(),
+    );
+  }
+}
+
+Future<bool> checkLoginStatus() async {
+  final prefs = await SharedPreferences.getInstance();
+  return prefs.getBool('isLoggedIn') ?? false;
+}
+
+Future<void> setLoginStatus(bool status) async {
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.setBool('isLoggedIn', status);
+}
