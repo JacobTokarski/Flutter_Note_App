@@ -3,7 +3,7 @@
 </p>
 
 
-# 📱 Mobile Notes App - Flutter/Dart
+# 📱 Mobile Notes App
 
 • Author: Jakub Tokarski, Index: 51700 
 
