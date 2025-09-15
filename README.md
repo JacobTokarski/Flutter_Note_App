@@ -33,9 +33,7 @@ The app uses persistent local storage via Shared Preferences, allowing users to 
 - **Dart** – Programming language used for writing application logic and UI components
 
 - **Android Studio** – Integrated development environment (IDE) for building and testing the app
-
-## 🚀 How to Run the Project
-
+  
 ## 📄 License
 
 This application was developed as part of academic coursework at **Uniwersytet Dolnośląski DSW Wrocław** and is intended solely for educational purposes.  
