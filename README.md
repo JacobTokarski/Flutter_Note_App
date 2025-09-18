@@ -36,6 +36,8 @@ The app uses persistent local storage via Shared Preferences, allowing users to 
   
 ## 📄 License
 
-This application was developed as part of academic coursework at **Uniwersytet Dolnośląski DSW Wrocław** and is intended solely for educational purposes.  
+This application was developed as part of academic coursework at **Uniwersytet Dolnośląski DSW Wrocław** and is intended solely for educational purposes.
+
+All icons used in this file were sourced from the following website: https://pl.freepik.com
 
 
